@@ -5,6 +5,7 @@ import { useState } from 'react';
 // import App from './App';
 
 import StarRating from './StarRating';
+import TextExpander from './Challenge/TextExpander';
 
 function Test() {
   const [movieRating, setMovieRating] = useState(0);
