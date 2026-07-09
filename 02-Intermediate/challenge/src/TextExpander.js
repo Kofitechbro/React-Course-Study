@@ -27,7 +27,7 @@ export default function TextExpander() {
         Space missions have given us incredible insights into our universe and
         have inspired future generations to keep reaching for the stars. Space
         travel is a pretty cool thing to think about. Who knows what we'll
-        discover next!
+        discover next.
       </TextExpanderStarter>
     </div>
   );
