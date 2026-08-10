@@ -1,12 +1,12 @@
-import React from 'react';
+ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { useState } from 'react';
-// import './index.css';
-// import App from './App';
+import './index.css';
+import App from './App';
 
-import StarRating from './StarRating';
-import TextExpander from './Challenge/TextExpander';
+// import StarRating from './StarRating';
 
+/*
 function Test() {
   const [movieRating, setMovieRating] = useState(0);
 
@@ -17,16 +17,17 @@ function Test() {
     </div>
   );
 }
+*/
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {/* <App /> */}
-    <StarRating
+    <App />
+    {/* <StarRating
       maxRating={5}
       messages={['Terrible', 'Bad', 'Okay', 'Good', 'Amazing']}
     />
     <StarRating size={25} color="red" className="test" defaultRating={3} />
-    <Test />
+    <Test /> */}
   </React.StrictMode>,
 );
