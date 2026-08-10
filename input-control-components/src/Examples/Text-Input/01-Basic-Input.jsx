@@ -5,7 +5,7 @@ export function BasicInput() {
 
   return (
     <section className="input-container">
-      <h2 className="sub-title">Basic Input</h2>
+      <h3 className="input-title">Basic Input</h3>
 
       <div>
         <input
