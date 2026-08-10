@@ -5,7 +5,7 @@ export function LiveDisplay() {
 
   return (
     <section className="input-container">
-        <h2 className="sub-title">Live Display</h2>
+        <h3 className="input-title">Live Display</h3>
       <div>
         <input
           type="text"
