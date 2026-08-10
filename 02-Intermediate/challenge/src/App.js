@@ -1,9 +1,9 @@
-import TextExpander from './TextExpander';
+import TextExpander from "./TextExpander";
 
 function App() {
   return (
     <>
-      <TextExpander />
+      <TextExpander/>
     </>
   );
 }
