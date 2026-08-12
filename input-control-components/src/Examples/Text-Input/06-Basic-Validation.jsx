@@ -1,73 +1,40 @@
 import { useState } from 'react';
 
 export function InputValidation() {
-  const [formData, setFormData] = useState({
-    name: '',
-    password: '',
-  });
-
-  const [errorMessage, setErrorMessage] = useState('');
-  const [isVisible, setIsVisible] = useState(false);
-
-  function handleChange(e) {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  }
+  const [name, setName] = useState('');
+  const [error, setError] = useState('');
 
   function handleSubmit(e) {
     e.preventDefault();
 
-    if (formData.name.trim() === '' || formData.password.trim() === '') {
-      setErrorMessage('Input fields required!');
+    if (name.trim() === '') {
+      setError('Name is required');
       return;
     }
 
-    if (formData.password.length < 6) {
-      setErrorMessage('Password must be at least 6 characters!');
-      return;
-    }
-
-    setErrorMessage('');
-    alert('Form submitted successfully!');
-    setFormData({
-      name: '',
-      password: '',
-    });
-  }
-
-  function handleVisible() {
-    setIsVisible(!isVisible);
+    setError('');
+    alert(name);
   }
 
   return (
-    <form onSubmit={handleSubmit} className="input-container">
-      <h3 className="input-title">Input Validation</h3>
+    <section className="input-container">
+      <h3 className="input-title">Basic Input Validation</h3>
 
-      {errorMessage && <p className="cap-text">{errorMessage}</p>}
-
-      <div>
+      <form onSubmit={handleSubmit}>
         <input
           type="text"
           name="name"
-          value={formData.name}
-          onChange={handleChange}
-          placeholder="Enter your name"
-          required
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          placeholder="Enter text"
         />
-      </div>
-      <div className="flex">
-        <input
-          type={isVisible ? 'text' : 'password'}
-          name="password"
-          value={formData.password}
-          onChange={handleChange}
-          placeholder="Enter password"
-          required
-        />
-        <button type="button" onClick={handleVisible}>
-          {isVisible ? 'Hide' : 'Show'}
-        </button>
-      </div>
-      <button type="submit">Submit</button>
-    </form>
+
+        <p className='cap-text'>{error}</p>
+
+        <div className="btn-container">
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+    </section>
   );
 }
