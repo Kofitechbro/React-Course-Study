@@ -17,10 +17,10 @@ export function InputValidation() {
   }
 
   return (
-    <section className="input-container">
+    <form onSubmit={handleSubmit} className="input-container">
       <h3 className="input-title">Basic Input Validation</h3>
 
-      <form onSubmit={handleSubmit}>
+      <div>
         <input
           type="text"
           name="name"
@@ -29,12 +29,9 @@ export function InputValidation() {
           placeholder="Enter text"
         />
 
-        <p className='cap-text'>{error}</p>
-
-        <div className="btn-container">
-          <button type="submit">Submit</button>
-        </div>
-      </form>
-    </section>
+        <p className="cap-text">{error}</p>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
   );
 }
