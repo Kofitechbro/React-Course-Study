@@ -8,14 +8,18 @@ export function BasicTextarea() {
     setMessage(e.target.value);
   }
 
+  // Clear Message
   function handleClear() {
     setMessage('');
   }
 
+  // Maximum Character Limit or Length
   const maxLength = 100;
 
+  // Word Count
   const wordCount = message.trim() ? message.trim().split(/\s+/).length : 0;
 
+  // Error or Textarea Validation
   function handleSubmit(e) {
     e.preventDefault();
 
@@ -24,11 +28,18 @@ export function BasicTextarea() {
       return;
     }
 
+    if (message.trim().length < 20) {
+      setError('Message must be at least 20 Characters');
+      return;
+    }
+
     setMessage('');
+    console.log('Message submitted:', message);
+    setError('');
   }
 
   return (
-    <form className="input-container">
+    <form className="input-container" onSubmit={handleSubmit}>
       <h3 className="input-title">Basic Textarea</h3>
 
       {/* Error Message */}
@@ -60,10 +71,10 @@ export function BasicTextarea() {
       {/* Word Count */}
       <p className="text">Word Count: {wordCount === 0 ? '' : wordCount}</p>
 
-      {/* clear */}
       <div className="flex flex-btn">
         <button type="submit">Submit</button>
 
+        {/* clear */}
         <button type="button" onClick={handleClear}>
           Clear
         </button>
