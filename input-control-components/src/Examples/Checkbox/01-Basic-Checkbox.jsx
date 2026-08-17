@@ -14,7 +14,7 @@ export function BasicCheckbox() {
           <input
             type="checkbox"
             className="checkbox"
-            value={isChecked}
+            checked={isChecked}
             onChange={(e) => setIsChecked(e.target.checked)}
           />
           Subscribe to newsletter
@@ -31,7 +31,7 @@ export function BasicCheckbox() {
           <input
             type="checkbox"
             className="checkbox"
-            value={showContent}
+            checked={showContent}
             onChange={(e) => setShowContent(e.target.checked)}
           />
           Show more Information
@@ -45,7 +45,7 @@ export function BasicCheckbox() {
           <input
             type="checkbox"
             className="checkbox"
-            value={accepted}
+            checked={accepted}
             onChange={(e) => setAccepted(e.target.checked)}
           />
           I agree to the Terms and Condition
