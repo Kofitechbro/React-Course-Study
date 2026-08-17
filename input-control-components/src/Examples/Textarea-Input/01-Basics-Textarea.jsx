@@ -71,7 +71,7 @@ export function BasicTextarea() {
       {/* Word Count */}
       <p className="text">Word Count: {wordCount === 0 ? '' : wordCount}</p>
 
-      <div className="flex flex-btn">
+      <div className="flex btn">
         <button type="submit">Submit</button>
 
         {/* clear */}
